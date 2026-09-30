@@ -1,0 +1,378 @@
+=== Offline demo · 2026-09-29 22:48:55
+
+$ networksetup -getairportpower en0
+Wi-Fi Power (en0): Off
+[took 0s]
+
+$ sh -c route -n get default 2>&1 | head -3 || true
+route: writing to routing socket: not in table
+[took 0s]
+
+$ sh -c curl -s -m 5 -o /dev/null -w "%{http_code}\n" https://www.google.com || echo "curl: no internet (expected)"
+000
+curl: no internet (expected)
+[took 0s]
+network check: offline
+
+$ brew services restart ollama
+Stopping `ollama`... (might take a while)
+==> Successfully stopped `ollama` (label: sh.brew.ollama)
+==> Successfully started `ollama` (label: sh.brew.ollama)
+[took 2s]
+
+$ ./wiki --help
+usage: wiki [-h] [--config CONFIG] [--model MODEL] COMMAND ...
+
+Personal wiki CLI: local Gemma (via Ollama) + your own notes.
+
+commands:
+  ingest [PATH]        read originals in vault/raw (or PATH), generate linked notes in
+                       vault/wiki, update vault/index.md, Source Catalog, retrieval index
+  search "QUERY"       show matching ORIGINAL passages + file:line locations (no model)
+  ask "QUESTION"       standalone factual answer from retrieved sources, with checked
+                       citations, or an explicit insufficient-evidence reply
+  chat                 personal assistant "Quill": conversation memory, looks up notes
+                       only when a turn needs them
+  status               model/runtime, memory in use, device, network, index size
+  lint                 check links, headings, names, duplicates, source references
+  eval                 run the 4 ask-mode tests in evals/questions.json -> evidence cards
+
+configuration: config.json (model, Ollama URL, chunk sizes, top-k, thresholds);
+instructions:  prompts/persona.md (chat), prompts/wiki-instructions.md (ask),
+               prompts/chat-router.md, prompts/ingest-instructions.md
+requires:      Ollama running locally (`ollama serve`) with the model pulled:
+               ollama pull gemma4:e2b-it-qat   (search works without it)
+outputs:       runs/<mode>/*.md|json (saved results), drafts/ (chat /save)
+
+positional arguments:
+  COMMAND
+    ingest         build/update wiki notes from original sources
+    search         show matching original passages (no model)
+    ask            grounded factual answer with citations
+    chat           personal assistant with conversation context
+    status         show model, runtime, memory, device, network, index
+    eval           run evals/questions.json and write evidence cards
+    lint           check wiki links, headings, names, duplicates, sources
+    help           show this help
+
+options:
+  -h, --help       show this help message and exit
+  --config CONFIG  path to config.json (default: project config.json)
+  --model MODEL    override the Ollama model tag from config.json
+
+examples:
+  ./wiki ingest vault/raw
+  ./wiki search "retrieval augmented generation"
+  ./wiki ask "What chunk size does the course recommend?" --mode local
+  ./wiki chat
+  ./wiki chat --script evals/chat_checks.txt
+[took 0s]
+
+$ ./wiki status
+{
+  "execution": "local",
+  "config": {
+    "model": "gemma4:e2b-it-qat",
+    "ollama_url": "http://127.0.0.1:11434",
+    "num_ctx": 8192,
+    "chunk_chars": 900,
+    "ask_top_k": 5,
+    "ask_min_score": 2.0
+  },
+  "runtime": {
+    "runtime": "ollama 0.34.4",
+    "model": "gemma4:e2b-it-qat",
+    "model_pulled": true,
+    "loaded": []
+  },
+  "index": {
+    "passages": 93,
+    "raw": 43,
+    "wiki": 50
+  },
+  "device": {
+    "os": "macOS 15.6.1",
+    "chip": "Apple M3",
+    "cpu_cores": "8",
+    "memory_gb": 16.0,
+    "memory_type": "unified (CPU+GPU shared)",
+    "free_disk_gb": 267.1,
+    "python": "3.14.7"
+  },
+  "network": "offline"
+}
+[took 0s]
+
+$ ./wiki ingest vault/raw
+ingest · local · gemma4:e2b-it-qat
+= vault/raw/IBD Client Questionnaire.docx: unchanged, keeping [[IBD Client Questionnaire]]
+= vault/raw/IBD Info Session Spring 2026_Slides.pdf: unchanged, keeping [[IBD Program Info Session]]
+= vault/raw/Teams@Haas Collaborative Plan .docx: unchanged, keeping [[Teams@Haas Collaborative Plan]]
+index.md, Source Catalog and retrieval index updated (13 notes, 93 passages) in 0.1s
+[took 1s]
+
+$ /var/folders/s1/h1j2gb1132385_821dg9fbsr0000gn/T/tmp.F0aL5BDGQo/wiki ingest /var/folders/s1/h1j2gb1132385_821dg9fbsr0000gn/T/tmp.F0aL5BDGQo/vault/raw/IBD Client Questionnaire.docx --force --overwrite-reviewed
+ingest · local · gemma4:e2b-it-qat
++ vault/raw/IBD Client Questionnaire.docx (update)
+  2778 chars -> 7 section(s) -> 1 Gemma call(s) of <= 6000 chars
+  part 1: 4 concept(s) in 23.3s
+  concepts kept: Central Strategic Challenge, Project Objectives and Outcomes, Market & Industry, Customer Insights
+  wrote [[IBD Client Questionnaire]] + 4 concept note(s) in 27.8s
+linking related notes for 5 note(s)
+index.md, Source Catalog and retrieval index updated (13 notes, 93 passages) in 27.9s
+[took 28s]
+
+$ sh -c ls -R '/var/folders/s1/h1j2gb1132385_821dg9fbsr0000gn/T/tmp.F0aL5BDGQo/vault/wiki' | diff '/var/folders/s1/h1j2gb1132385_821dg9fbsr0000gn/T/tmp.F0aL5BDGQo/before.txt' - && echo 'same note files: no duplicates'
+same note files: no duplicates
+[took 0s]
+
+$ /var/folders/s1/h1j2gb1132385_821dg9fbsr0000gn/T/tmp.F0aL5BDGQo/wiki lint
+checked 13 notes, 15 Markdown files, 141 links
+OK: no problems found
+[took 0s]
+
+$ ./wiki lint
+checked 13 notes, 15 Markdown files, 141 links
+OK: no problems found
+[took 0s]
+
+$ ./wiki search team goals success
+search · retrieval only (no model) · scope=raw · 93 passages indexed
+
+[1] vault/raw/Teams@Haas Collaborative Plan .docx:29-31 (GOAL ALIGNMENT)  score=7.994  (raw)
+    ## GOAL ALIGNMENT
+    Part II:  Team Goals
+    HOW DO WE KNOW IF WE ARE SUCCESSFUL?  The following are a set of shared goals that align with our individual aims and that we can evaluate and metric over time to determine whether we are meeting our success criteria.
+
+[2] vault/raw/Teams@Haas Collaborative Plan .docx:4-9 (GOAL ALIGNMENT)  score=7.223  (raw)
+    ## GOAL ALIGNMENT
+    Part I:  Individual Motivations, Strengths & Development Goals
+    WHO ARE WE AS A TEAM? Team exercise:  Discuss each member’s prior work experience, professional goals, and the core areas where you each hope to evolve as a leader.
+    Part II:  Team Goals
+    HOW DO WE KNOW IF WE ARE SUCCESSFUL?  Team exercise:  Based on your individual motivations, work together to develop your team’s goals while ensuring they align with your individual aims. Does each team member fully understand them and believe in them?  Are team members energized by them?  How will the team know if you’ve achieved these goals?  What impact will your team have if you achieve success?  What milestones need to be hit at what times to get there?
+    NOTE: Team goals should be challenging, consequential, and measurable.
+
+[3] vault/raw/Teams@Haas Collaborative Plan .docx:22-28 (GOAL ALIGNMENT)  score=5.191  (raw)
+    ## GOAL ALIGNMENT
+    Part I:  Individual Motivations, Strengths & Development Goals
+    WHO ARE WE AS A TEAM? The following outlines our prior work experience, professional goals, and our core development goals we hope to evolve on our leadership journey here at Haas.
+    Team Member1
+    Team Member2
+    Team Member3
+    Team Member4
+
+[4] vault/raw/IBD Client Questionnaire.docx:10-14 ((2) Project Objectives and Outcomes)  score=3.96  (raw)
+    ## (2) Project Objectives and Outcomes
+    - What is the main objective that we should try to achieve together and that would get you a long way toward meeting the challenge?
+    - Potential categories:  improved revenue, profitability, capabilities, customer intimacy, future optionality, culture, sustainability, cost structure, etc.
+    - At the end of this project, what would success look like?
+    - What are the greatest concerns, risks or jeopardies to our joint success in your mind?
+
+[5] vault/raw/Teams@Haas Collaborative Plan .docx:35-36 (TEAM KNOWLEDGE COORDINATION)  score=3.656  (raw)
+    ## TEAM KNOWLEDGE COORDINATION
+    HOW DO WE WORK? The following are the work practices, communication protocols, work rhythms, technologies, as well as roles and responsibilities that will support our team in coordinating our work effectively to meet our performance goals.
+
+saved: runs/search/20260929-224930-team-goals-success.md
+[took 0s]
+
+$ ./wiki eval
+
+=== test1: When is the IBD application deadline?
+ask · local · gemma4:e2b-it-qat · 5 passage(s) from vault/raw (min score 2.0)
+
+The IBD application deadline is October 8 [S1, S2].
+
+citations (cited):
+  [S1] vault/raw/IBD Info Session Spring 2026_Slides.pdf:65-77 (Page 7)  (word overlap 75%)
+  [S2] vault/raw/IBD Info Session Spring 2026_Slides.pdf:166-179 (Page 16)  (word overlap 75%)
+time: 2.33s total, 46.1 tok/s
+saved: runs/ask/20260929-224933-test1-when-is-the-ibd-application.md
+
+card: evidence/ask-tests/test1.md
+
+=== test2: If I lead an IBD team, how many hours a week should I plan to spend on it?
+ask · local · gemma4:e2b-it-qat · 5 passage(s) from vault/raw (min score 2.0)
+
+A Team Lead should plan to spend 10-12 hours per week on the IBD program, which includes class time and client calls [S2].
+
+citations (cited):
+  [S2] vault/raw/IBD Info Session Spring 2026_Slides.pdf:78-95 (Page 8)  (word overlap 75%)
+time: 2.62s total, 46.4 tok/s
+saved: runs/ask/20260929-224935-test2-if-i-lead-an-ibd.md
+
+card: evidence/ask-tests/test2.md
+
+=== test3: How should a consulting team define success, both with the client and within the team itself?
+ask · local · gemma4:e2b-it-qat · 5 passage(s) from vault/raw (min score 2.0)
+
+The following are a set of shared goals that align with individual aims and can be evaluated and measured over time to determine whether success criteria are being met [S2]. The client questionnaire asks what success would look like at the end of a project [S4].
+
+citations (cited):
+  [S2] vault/raw/Teams@Haas Collaborative Plan .docx:29-31 (GOAL ALIGNMENT)  (word overlap 80%)
+  [S4] vault/raw/IBD Client Questionnaire.docx:10-14 ((2) Project Objectives and Outcomes)  (word overlap 62%)
+time: 2.67s total, 47.7 tok/s
+saved: runs/ask/20260929-224938-test3-how-should-a-consulting-team.md
+
+card: evidence/ask-tests/test3.md
+
+=== test4: How is the IBD course graded?
+ask · local · gemma4:e2b-it-qat · 5 passage(s) from vault/raw (min score 2.0)
+
+Insufficient evidence: the wiki sources do not contain information that answers this question.
+
+citations (insufficient-evidence):
+  (none)
+time: 1.97s total, 47.3 tok/s
+saved: runs/ask/20260929-224940-test4-how-is-the-ibd-course.md
+
+card: evidence/ask-tests/test4.md
+
+summary:
+  test1: status=cited retrieval={'vault/raw/IBD Info Session Spring 2026_Slides.pdf': 1} expected-behavior=yes
+  test2: status=cited retrieval={'vault/raw/IBD Info Session Spring 2026_Slides.pdf': 1} expected-behavior=yes
+  test3: status=cited retrieval={'vault/raw/IBD Client Questionnaire.docx': 3, 'vault/raw/Teams@Haas Collaborative Plan .docx': 2} expected-behavior=yes
+  test4: status=insufficient-evidence retrieval=- expected-behavior=yes
+network: offline
+[took 10s]
+
+$ ./wiki chat --script evals/chat_checks.txt
+chat · local · gemma4:e2b-it-qat · persona: prompts/persona.md · /help for commands, /exit to quit
+
+you> what can we do?
+  [notes: not needed · conversational / follow-up rule]
+quill> I can help you brainstorm, draft, outline, plan, and rewrite text. I can also work through ideas step by step or follow up on previous turns. I can look things up in your wiki for specific information like course notes or project details.
+
+For example, I can help you:
+
+1.  Draft an email for a project.
+2.  Outline a study plan for a tough concept.
+3.  Develop an initial idea for a project based on topics like **Market & Industry** or **Project Objectives and Outcomes**.
+
+What are you working on right now?
+
+you> what can you help me with?
+  [notes: not needed · conversational / follow-up rule]
+quill> I can help you with a lot. I'm good at tasks like:
+
+*   **Drafting and Rewriting:** I can help you write emails, summaries, or anything else you need to put down on paper.
+*   **Planning:** I can help you outline study plans or project steps.
+*   **Brainstorming:** If you need ideas for a project or a concept, I can help you come up with options.
+*   **Working Through Ideas:** If you have a rough idea, we can take it step-by-step to develop it.
+*   **Information Retrieval:** I can look things up in your wiki for specific details on topics like **Team Roles and Expectations** or **IBD Mechanics**.
+
+For example, we could start by:
+
+1.  Drafting an outline for a presentation on the **Central Strategic Challenge**.
+2.  Brainstorming potential **Project Objectives and Outcomes** for an upcoming assignment.
+3.  Reviewing the general structure of the **Team Climate** notes.
+
+What sounds most useful right now?
+
+you> draft a short agenda for our first meeting with a new IBD client, using the questions from my notes
+  [notes: 4 passage(s) for 'IBD client meeting agenda questions' · router (Gemma)]
+quill> Here is a draft agenda for your first meeting with a new IBD client. This is based on the questions about meeting structure and coordination you have in your notes.
+
+**Meeting Agenda: Initial IBD Client Kickoff**
+
+1.  **Purpose and Logistics**
+    *   Review the purpose of this first meeting.
+    *   Discuss meeting frequency, preferred time, location (or virtual setup), and duration.
+
+2.  **Team Roles and Responsibilities**
+    *   Define roles for the team during this engagement.
+    *   Establish basic communication protocols.
+
+3.  **Work Rhythms and Working Styles**
+    *   Discuss preferred communication tools (e.g., email, shared docs, etc.).
+    *   Understand how the team prefers to handle information requests and updates on developments.
+    *   Briefly discuss individual working styles and how they might impact the team's approach.
+
+4.  **Next Steps and Follow-up**
+    *   Confirm agreed-upon next steps.
+    *   Set a date for the next meeting.
+
+How does that look? We can adjust the focus or make it longer if you need more detail on any specific section.
+  ! 16 sentence(s) without a citation
+
+you> make that shorter
+  [notes: not needed · conversational / follow-up rule]
+quill> Here is a shorter version of the agenda:
+
+**Meeting Agenda: Initial IBD Client Kickoff**
+
+1.  **Logistics:** Meeting frequency, time, and duration.
+2.  **Team Setup:** Defining roles and communication protocols.
+3.  **Workflow:** Discussing preferred communication methods and working styles.
+4.  **Next Steps:** Confirming immediate action items and setting the next meeting date.
+
+This keeps the core elements without getting bogged down in too much detail. Ready to move on to drafting the actual email or planning the first few weeks?
+
+you> FYI, the IBD application deadline was moved to October 20.
+  [notes: not needed · router (Gemma)]
+quill> Got it. I've noted that the IBD application deadline has been moved to October 20.
+
+What would you like to work on next?
+
+transcript saved: /Users/adelinelalor/Documents/Courses/Fundamentals of Agentic AI/Assignment 4/runs/chat/20260929-225004-chat.md
+[took 24s]
+
+$ ./wiki ask When is the IBD application deadline?
+ask · local · gemma4:e2b-it-qat · 5 passage(s) from vault/raw (min score 2.0)
+
+The IBD application deadline is October 8 [S1, S2].
+
+citations (cited):
+  [S1] vault/raw/IBD Info Session Spring 2026_Slides.pdf:65-77 (Page 7)  (word overlap 75%)
+  [S2] vault/raw/IBD Info Session Spring 2026_Slides.pdf:166-179 (Page 16)  (word overlap 75%)
+time: 0.46s total, 48.5 tok/s
+saved: runs/ask/20260929-225005-when-is-the-ibd-application-deadline.md
+[took 1s]
+
+$ ./wiki status
+{
+  "execution": "local",
+  "config": {
+    "model": "gemma4:e2b-it-qat",
+    "ollama_url": "http://127.0.0.1:11434",
+    "num_ctx": 8192,
+    "chunk_chars": 900,
+    "ask_top_k": 5,
+    "ask_min_score": 2.0
+  },
+  "runtime": {
+    "runtime": "ollama 0.34.4",
+    "model": "gemma4:e2b-it-qat",
+    "model_pulled": true,
+    "loaded": [
+      {
+        "name": "gemma4:e2b-it-qat",
+        "size_gb": 3.57,
+        "gpu_gb": 3.57,
+        "context": 8192
+      }
+    ]
+  },
+  "index": {
+    "passages": 93,
+    "raw": 43,
+    "wiki": 50
+  },
+  "device": {
+    "os": "macOS 15.6.1",
+    "chip": "Apple M3",
+    "cpu_cores": "8",
+    "memory_gb": 16.0,
+    "memory_type": "unified (CPU+GPU shared)",
+    "free_disk_gb": 267.1,
+    "python": "3.14.7"
+  },
+  "network": "offline"
+}
+[took 0s]
+
+$ sh -c ps -axo rss=,command= | grep -i '[o]llama' | awk '{printf "%.2f GB  %s %s %s\n", $1/1048576, $2, $3, $4}'
+0.03 GB  /opt/homebrew/opt/ollama/bin/ollama serve 
+4.45 GB  /opt/homebrew/Cellar/ollama/0.34.4/libexec/lib/ollama/llama-server --model /Users/adelinelalor/.ollama/models/blobs/sha256-3646b4c147cd235a44d91df1546d3b7d8e29b547dbe4e1f80856419aa455e6fd
+[took 0s]
+
+=== done · transcript: evidence/offline/transcript.txt · evidence cards: evidence/ask-tests/ · mode checks: evidence/mode-checks/

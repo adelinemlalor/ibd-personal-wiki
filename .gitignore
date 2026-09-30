@@ -1,0 +1,7 @@
+.wiki-state/
+__pycache__/
+*.pyc
+.DS_Store
+vault/.obsidian/workspace*.json
+vault/.trash/
+*.gguf

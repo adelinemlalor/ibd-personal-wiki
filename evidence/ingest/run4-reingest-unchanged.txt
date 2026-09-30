@@ -1,0 +1,7 @@
+ingest · local · gemma4:e2b-it-qat
+= vault/raw/IBD Client Questionnaire.docx: unchanged, keeping [[IBD Client Questionnaire]]
+= vault/raw/IBD Info Session Spring 2026_Slides.pdf: unchanged, keeping [[IBD Program Info Session]]
+= vault/raw/Teams@Haas Collaborative Plan .docx: unchanged, keeping [[Teams@Haas Collaborative Plan]]
+index.md, Source Catalog and retrieval index updated (13 notes, 93 passages) in 0.1s
+--- note files before vs after:
+identical

@@ -1,0 +1,115 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "time": "2026-09-29T21:52:38",
+  "question": "How should a consulting team define success, both with the client and within the team itself?",
+  "retrieved": [
+    {
+      "label": "S1",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L27-39",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 4",
+      "lines": [
+        27,
+        39
+      ],
+      "score": 5.724,
+      "text": "## Page 4\n1,800+  500+  89\nMBA  Global\nCountries\nStudents  Projects\nWhat is IBD?\n● Management consulting\nelective course\n● International projects with real\nworld clients\n● Offered to MBAs at Berkeley\nHaas for 34 years!"
+    },
+    {
+      "label": "S2",
+      "id": "vault/raw/Teams@Haas Collaborative Plan .docx#L29-31",
+      "path": "vault/raw/Teams@Haas Collaborative Plan .docx",
+      "kind": "raw",
+      "section": "GOAL ALIGNMENT",
+      "lines": [
+        29,
+        31
+      ],
+      "score": 4.431,
+      "text": "## GOAL ALIGNMENT\nPart II:  Team Goals\nHOW DO WE KNOW IF WE ARE SUCCESSFUL?  The following are a set of shared goals that align with our individual aims and that we can evaluate and metric over time to determine whether we are meeting our success criteria."
+    },
+    {
+      "label": "S3",
+      "id": "vault/raw/IBD Client Questionnaire.docx#L28-31",
+      "path": "vault/raw/IBD Client Questionnaire.docx",
+      "kind": "raw",
+      "section": "(5) Organization & Performance",
+      "lines": [
+        28,
+        31
+      ],
+      "score": 4.396,
+      "text": "## (5) Organization & Performance\n- Who is the lead sponsor for this work?\n- What are the key stakeholder groups who will need to be involved and consulted along the way?\n- Is this organization going through any major internal transitions at present (e.g., of leadership, organizational structure, culture)?"
+    },
+    {
+      "label": "S4",
+      "id": "vault/raw/IBD Client Questionnaire.docx#L10-14",
+      "path": "vault/raw/IBD Client Questionnaire.docx",
+      "kind": "raw",
+      "section": "(2) Project Objectives and Outcomes",
+      "lines": [
+        10,
+        14
+      ],
+      "score": 3.958,
+      "text": "## (2) Project Objectives and Outcomes\n- What is the main objective that we should try to achieve together and that would get you a long way toward meeting the challenge?\n- Potential categories:  improved revenue, profitability, capabilities, customer intimacy, future optionality, culture, sustainability, cost structure, etc.\n- At the end of this project, what would success look like?\n- What are the greatest concerns, risks or jeopardies to our joint success in your mind?"
+    },
+    {
+      "label": "S5",
+      "id": "vault/raw/IBD Client Questionnaire.docx#L32-36",
+      "path": "vault/raw/IBD Client Questionnaire.docx",
+      "kind": "raw",
+      "section": "(6) Engagement Design: Project Timeline & Deliverables",
+      "lines": [
+        32,
+        36
+      ],
+      "score": 3.849,
+      "text": "## (6) Engagement Design: Project Timeline & Deliverables\n- How does the project / course timeline integrate into your own organizational review cycles?\n- Are there any major calendar issues within the organization that could affect our project (e.g., end of fiscal year, annual meeting, personal vacations for team members or sponsors).\n- What key deliverables will we need to support our project objectives?\n- What communications style tends to work best in this organizational culture?"
+    }
+  ],
+  "used_passages": 5,
+  "min_score": 2.0,
+  "answer": "The following are a set of shared goals that align with individual aims and can be evaluated and measured over time to determine whether success criteria are met [S2].\n\nThe client questionnaire asks what success would look like at the end of the project [S4].",
+  "decided_by": "model",
+  "status": "cited",
+  "citation_check": {
+    "cited": [
+      {
+        "label": "S2",
+        "id": "vault/raw/Teams@Haas Collaborative Plan .docx#L29-31",
+        "location": "vault/raw/Teams@Haas Collaborative Plan .docx:29-31 (GOAL ALIGNMENT)"
+      },
+      {
+        "label": "S4",
+        "id": "vault/raw/IBD Client Questionnaire.docx#L10-14",
+        "location": "vault/raw/IBD Client Questionnaire.docx:10-14 ((2) Project Objectives and Outcomes)"
+      }
+    ],
+    "invalid_labels": [],
+    "uncited_sentences": [],
+    "support": [
+      {
+        "sentence": "The following are a set of shared goals that align with individual aims and can be evaluated and measured over time to determine whether success criteria are met .",
+        "label": "S2",
+        "overlap": 0.8
+      },
+      {
+        "sentence": "The client questionnaire asks what success would look like at the end of the project .",
+        "label": "S4",
+        "overlap": 0.62
+      }
+    ],
+    "insufficient": false
+  },
+  "stats": {
+    "wall_seconds": 2.43,
+    "load_seconds": 0.0,
+    "prompt_tokens": 967,
+    "output_tokens": 53,
+    "gen_tokens_per_sec": 46.6
+  }
+}

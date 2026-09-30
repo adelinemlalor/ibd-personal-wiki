@@ -1,0 +1,21 @@
+{
+  "model": "gemma4:e2b-it-qat",
+  "started": "2026-09-29T22:49:02",
+  "sources": [
+    {
+      "source": "vault/raw/IBD Client Questionnaire.docx",
+      "status": "ingested",
+      "note": "IBD Client Questionnaire",
+      "concepts": [
+        "Central Strategic Challenge",
+        "Project Objectives and Outcomes",
+        "Market & Industry",
+        "Customer Insights"
+      ],
+      "seconds": 27.8
+    }
+  ],
+  "seconds": 27.9,
+  "notes_total": 13,
+  "passages_indexed": 93
+}

@@ -1,0 +1,93 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "time": "2026-09-29T22:49:38",
+  "question": "How is the IBD course graded?",
+  "retrieved": [
+    {
+      "label": "S1",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L56-64",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 6",
+      "lines": [
+        56,
+        64
+      ],
+      "score": 4.455,
+      "text": "## Page 6\nSpring 2026 IBD Program Class\n● 3 Unit Elective FTMBA Course\n● Remote collaboration with clients from January to early-May\n● 2 weeks of project work overseas in late-May\n● First year FTMBA students only\n● 9:00 am-12:00 pm on Thursdays\n● IBD is a No-Drop Course!"
+    },
+    {
+      "label": "S2",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L27-39",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 4",
+      "lines": [
+        27,
+        39
+      ],
+      "score": 3.528,
+      "text": "## Page 4\n1,800+  500+  89\nMBA  Global\nCountries\nStudents  Projects\nWhat is IBD?\n● Management consulting\nelective course\n● International projects with real\nworld clients\n● Offered to MBAs at Berkeley\nHaas for 34 years!"
+    },
+    {
+      "label": "S3",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L191-204",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 18",
+      "lines": [
+        191,
+        204
+      ],
+      "score": 3.213,
+      "text": "## Page 18\nJan 22\nFirst class session, 9-12 pm\nMay 7\nLast class session\nMay 18-30\nWhat is the IBD  Teams work on site in-country. This is\nnot flexible and students must be\ncourse schedule?  in-country the entire time\nMid-September\nHalf-day Fall Conference when teams\npresent their IBD projects to\nclassmates and guests"
+    },
+    {
+      "label": "S4",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L147-156",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 14",
+      "lines": [
+        147,
+        156
+      ],
+      "score": 3.148,
+      "text": "## Page 14\nWhat content is covered in IBD?\nIBD course content is customized based on the project mix and includes:\n◦ Project scope and client management tools\n◦ Problem definition, hypothesis development and testing\n◦ Market research and analysis, including primary research (qual and/or\nquant)\n◦ Tools for development of GTM, strategic planning, and assessing\nproduct-market fit"
+    },
+    {
+      "label": "S5",
+      "id": "vault/raw/IBD Client Questionnaire.docx#L32-36",
+      "path": "vault/raw/IBD Client Questionnaire.docx",
+      "kind": "raw",
+      "section": "(6) Engagement Design: Project Timeline & Deliverables",
+      "lines": [
+        32,
+        36
+      ],
+      "score": 2.253,
+      "text": "## (6) Engagement Design: Project Timeline & Deliverables\n- How does the project / course timeline integrate into your own organizational review cycles?\n- Are there any major calendar issues within the organization that could affect our project (e.g., end of fiscal year, annual meeting, personal vacations for team members or sponsors).\n- What key deliverables will we need to support our project objectives?\n- What communications style tends to work best in this organizational culture?"
+    }
+  ],
+  "used_passages": 5,
+  "min_score": 2.0,
+  "answer": "Insufficient evidence: the wiki sources do not contain information that answers this question.",
+  "decided_by": "model",
+  "status": "insufficient-evidence",
+  "citation_check": {
+    "cited": [],
+    "invalid_labels": [],
+    "uncited_sentences": [],
+    "support": [],
+    "insufficient": true
+  },
+  "stats": {
+    "wall_seconds": 1.97,
+    "load_seconds": 0.0,
+    "prompt_tokens": 1024,
+    "output_tokens": 16,
+    "gen_tokens_per_sec": 47.3
+  }
+}

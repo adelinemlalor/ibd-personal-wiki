@@ -1,0 +1,21 @@
+{
+  "mode": "search",
+  "query": "application deadline",
+  "scope": "raw",
+  "time": "2026-09-29T21:54:19",
+  "hits": [
+    {
+      "label": "1",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L65-77",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 7",
+      "lines": [
+        65,
+        77
+      ],
+      "score": 6.033,
+      "text": "## Page 7\nHow does the IBD Program work?\n● Oct 8: IBD application deadline\n◦ All applicants will be considered for a team member position\n◦ Those interested in being a team lead indicate this on the application\n● Week of Oct 13: Review of IBD applications and selected team lead\ncandidate interviews\n● Week of Oct 27: Notification of acceptance into the IBD program\n● Spring semester:\n◦  All enrolled students are assigned to a project team advised by a Faculty Mentor\n◦  Each team has 4 members (including a Team Lead) and 1 Faculty Mentor\n◦  Teams spend last 2 weeks of May in-country"
+    }
+  ]
+}

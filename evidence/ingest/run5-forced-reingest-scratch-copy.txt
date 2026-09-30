@@ -1,0 +1,16 @@
+# forced re-generation of one source on a scratch copy of the reviewed vault
+ingest · local · gemma4:e2b-it-qat
++ vault/raw/IBD Info Session Spring 2026_Slides.pdf (update)
+  8095 chars -> 26 section(s) -> 2 Gemma call(s) of <= 6000 chars
+  part 1: 4 concept(s) in 16.4s
+  part 2: 4 concept(s) in 14.1s
+  concepts kept: IBD Mechanics, Team Member Expectations, IBD Project Travel Costs, International Travel Requirements
+  wrote [[IBD Program Info Session]] + 4 concept note(s) in 36.3s
+linking related notes for 5 note(s)
+  related for IBD Project Travel Costs: 3 link(s)
+index.md, Source Catalog and retrieval index updated (14 notes, 92 passages) in 40.6s
+--- note files before vs after:
+9a10
+> IBD Project Travel Costs.md
+checked 14 notes, 16 Markdown files, 139 links
+OK: no problems found

@@ -1,0 +1,73 @@
+{
+  "mode": "search",
+  "query": "team goals success",
+  "scope": "raw",
+  "time": "2026-09-29T21:52:33",
+  "hits": [
+    {
+      "label": "1",
+      "id": "vault/raw/Teams@Haas Collaborative Plan .docx#L29-31",
+      "path": "vault/raw/Teams@Haas Collaborative Plan .docx",
+      "kind": "raw",
+      "section": "GOAL ALIGNMENT",
+      "lines": [
+        29,
+        31
+      ],
+      "score": 7.991,
+      "text": "## GOAL ALIGNMENT\nPart II:  Team Goals\nHOW DO WE KNOW IF WE ARE SUCCESSFUL?  The following are a set of shared goals that align with our individual aims and that we can evaluate and metric over time to determine whether we are meeting our success criteria."
+    },
+    {
+      "label": "2",
+      "id": "vault/raw/Teams@Haas Collaborative Plan .docx#L4-9",
+      "path": "vault/raw/Teams@Haas Collaborative Plan .docx",
+      "kind": "raw",
+      "section": "GOAL ALIGNMENT",
+      "lines": [
+        4,
+        9
+      ],
+      "score": 7.22,
+      "text": "## GOAL ALIGNMENT\nPart I:  Individual Motivations, Strengths & Development Goals\nWHO ARE WE AS A TEAM? Team exercise:  Discuss each member’s prior work experience, professional goals, and the core areas where you each hope to evolve as a leader.\nPart II:  Team Goals\nHOW DO WE KNOW IF WE ARE SUCCESSFUL?  Team exercise:  Based on your individual motivations, work together to develop your team’s goals while ensuring they align with your individual aims. Does each team member fully understand them and believe in them?  Are team members energized by them?  How will the team know if you’ve achieved these goals?  What impact will your team have if you achieve success?  What milestones need to be hit at what times to get there?\nNOTE: Team goals should be challenging, consequential, and measurable."
+    },
+    {
+      "label": "3",
+      "id": "vault/raw/Teams@Haas Collaborative Plan .docx#L22-28",
+      "path": "vault/raw/Teams@Haas Collaborative Plan .docx",
+      "kind": "raw",
+      "section": "GOAL ALIGNMENT",
+      "lines": [
+        22,
+        28
+      ],
+      "score": 5.19,
+      "text": "## GOAL ALIGNMENT\nPart I:  Individual Motivations, Strengths & Development Goals\nWHO ARE WE AS A TEAM? The following outlines our prior work experience, professional goals, and our core development goals we hope to evolve on our leadership journey here at Haas.\nTeam Member1\nTeam Member2\nTeam Member3\nTeam Member4"
+    },
+    {
+      "label": "4",
+      "id": "vault/raw/IBD Client Questionnaire.docx#L10-14",
+      "path": "vault/raw/IBD Client Questionnaire.docx",
+      "kind": "raw",
+      "section": "(2) Project Objectives and Outcomes",
+      "lines": [
+        10,
+        14
+      ],
+      "score": 3.958,
+      "text": "## (2) Project Objectives and Outcomes\n- What is the main objective that we should try to achieve together and that would get you a long way toward meeting the challenge?\n- Potential categories:  improved revenue, profitability, capabilities, customer intimacy, future optionality, culture, sustainability, cost structure, etc.\n- At the end of this project, what would success look like?\n- What are the greatest concerns, risks or jeopardies to our joint success in your mind?"
+    },
+    {
+      "label": "5",
+      "id": "vault/raw/Teams@Haas Collaborative Plan .docx#L35-36",
+      "path": "vault/raw/Teams@Haas Collaborative Plan .docx",
+      "kind": "raw",
+      "section": "TEAM KNOWLEDGE COORDINATION",
+      "lines": [
+        35,
+        36
+      ],
+      "score": 3.655,
+      "text": "## TEAM KNOWLEDGE COORDINATION\nHOW DO WE WORK? The following are the work practices, communication protocols, work rhythms, technologies, as well as roles and responsibilities that will support our team in coordinating our work effectively to meet our performance goals."
+    }
+  ]
+}

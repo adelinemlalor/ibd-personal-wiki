@@ -1,0 +1,9 @@
+# Mode-boundary checks for `./wiki chat --script evals/chat_checks.txt`
+# Expect: capability answers without a notes lookup or "insufficient evidence";
+# a draft that may look up notes and cite them; a follow-up that uses the conversation only.
+what can we do?
+what can you help me with?
+draft a short agenda for our first meeting with a new IBD client, using the questions from my notes
+make that shorter
+# A claim made only in chat. It must NOT change `wiki ask "When is the IBD application deadline?"`
+FYI, the IBD application deadline was moved to October 20.

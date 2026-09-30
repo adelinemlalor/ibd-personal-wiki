@@ -1,0 +1,45 @@
+[
+  {
+    "id": "test1",
+    "type": "direct",
+    "question": "When is the IBD application deadline?",
+    "expected_behavior": "Answer 'October 8' with a citation to the IBD Info Session slides (page 7 'How does the IBD Program work?' and/or the sign-up page 16).",
+    "expected_sources": [
+      "vault/raw/IBD Info Session Spring 2026_Slides.pdf"
+    ],
+    "expected_passage": "Oct 8: IBD application deadline",
+    "assessment": "**PASS.** Retrieval: the expected slide (page 7, \"● Oct 8: IBD application deadline\") is S1, rank 1. Answer \"October 8\" is supported by both citations: [S1] page 7 says \"Oct 8: IBD application deadline\" and [S2] page 16 says \"Oct 8: Applications due\". No extra claims. (Checked by opening both passages above.)"
+  },
+  {
+    "id": "test2",
+    "type": "paraphrased",
+    "question": "If I lead an IBD team, how many hours a week should I plan to spend on it?",
+    "expected_behavior": "Answer '10-12 hours per week' (the Team Lead expectation), not the 8-10 hours for team members, citing the Info Session slides page 8. The question says 'lead a team' and 'hours a week' while the slide says 'Team Lead Expectations' and '10-12 hours/week'. Risk known before running: pdftotext puts the two slide columns on the same line, so the member and lead hours appear side by side.",
+    "expected_sources": [
+      "vault/raw/IBD Info Session Spring 2026_Slides.pdf"
+    ],
+    "expected_passage": "Team Member Expectations  Team Lead Expectations / 8-10 hours/week (including class time  10-12 hours/week",
+    "assessment": "**PARTIAL FAIL: correct number, unsupported qualifier.** Retrieval: correct, page 8 is S2 (rank 2, behind the page-7 overview). \"A Team Lead should plan to spend 10-12 hours per week\" is supported by [S2] (Team Lead column: \"10-12 hours/week\"). \"…which includes class time and client calls\" is **not** supported for leads: on the slide, \"(including class time and client calls)\" belongs to the *Team Member* column's \"8-10 hours/week\". Cause: `pdftotext -layout` puts both columns on one text line (`● 8-10 hours/week (including class time  ● 10-12 hours/week`), so the qualifier appears attached to both numbers. The citation points to the right slide, but the slide does not support that detail, so this counts as a misattributed claim. Same result in v1 and v2; see README §7 for the cause and proposed fix."
+  },
+  {
+    "id": "test3",
+    "type": "two-source",
+    "question": "How should a consulting team define success, both with the client and within the team itself?",
+    "expected_behavior": "Combine two sources, each cited: the Client Questionnaire asks the client what success would look like at the end of the project (and about risks to joint success); the Teams@Haas plan asks 'How do we know if we are successful?' and says team goals should be challenging, consequential, and measurable.",
+    "expected_sources": [
+      "vault/raw/IBD Client Questionnaire.docx",
+      "vault/raw/Teams@Haas Collaborative Plan .docx"
+    ],
+    "expected_passage": "Questionnaire: 'At the end of this project, what would success look like?' | Teams@Haas: 'NOTE: Team goals should be challenging, consequential, and measurable.'",
+    "assessment": "**PASS (thin but grounded).** Retrieval: Teams@Haas at rank 2 (S2, lines 29-31) and the Client Questionnaire at rank 3 (S3) and 4 (S4, lines 10-14). Client half: \"The client questionnaire asks what success would look like at the end of a project [S4]\" is supported; S4 contains \"At the end of this project, what would success look like?\". Team half: \"shared goals that align with individual aims and can be evaluated and measured over time to determine whether success criteria are being met [S2]\" is supported almost word for word by S2. Both expected sources are cited correctly. Weakness: it copies template wording (\"The following are…\"), and it does not mention \"challenging, consequential, and measurable\" because that passage (Teams@Haas lines 4-9) was not in this run's top 5. That is an omission, not an invention. In v1 this test failed (the client source was ignored); the research-rule change fixed it."
+  },
+  {
+    "id": "test4",
+    "type": "unsupported",
+    "question": "How is the IBD course graded?",
+    "expected_behavior": "Insufficient evidence. None of the three sources mentions grades or grading (checked by text search before running). The answer must not guess a grading scheme.",
+    "expected_sources": [],
+    "expected_passage": "",
+    "assessment": "**PASS.** The five retrieved passages (four general program slides and one questionnaire section, scores 3.1–4.5) cleared the 2.0 threshold, so the model *was* asked, which tests the model, not just the harness gate. None of them mention grades or grading, and Gemma returned the exact insufficient-evidence sentence without guessing a grading scheme. Verified before the run that \"grade\"/\"grading\" appears in none of the three sources."
+  }
+]

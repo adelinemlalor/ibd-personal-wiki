@@ -1,0 +1,4 @@
+#!/bin/sh
+# Launcher: ./wiki <command> ...  (standard-library Python 3.9+, no packages needed)
+DIR="$(cd "$(dirname "$0")" && pwd)"
+PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m wikicli "$@"

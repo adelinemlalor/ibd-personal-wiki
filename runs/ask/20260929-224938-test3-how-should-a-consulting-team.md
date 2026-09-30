@@ -1,0 +1,59 @@
+# ask: How should a consulting team define success, both with the client and within the team itself?
+
+- mode: ask · execution: local · model: `gemma4:e2b-it-qat`
+- time: 2026-09-29T22:49:35 · status: **cited** · decided by: model
+
+## Answer
+
+The following are a set of shared goals that align with individual aims and can be evaluated and measured over time to determine whether success criteria are being met [S2]. The client questionnaire asks what success would look like at the end of a project [S4].
+
+## Citation check
+
+  [S2] vault/raw/Teams@Haas Collaborative Plan .docx:29-31 (GOAL ALIGNMENT)  (word overlap 80%)
+  [S4] vault/raw/IBD Client Questionnaire.docx:10-14 ((2) Project Objectives and Outcomes)  (word overlap 62%)
+
+## Retrieved passages (top 5, raw sources)
+
+**[S1]** `vault/raw/IBD Info Session Spring 2026_Slides.pdf:27-39 (Page 4)` — score 5.727
+
+> ## Page 4
+> 1,800+  500+  89
+> MBA  Global
+> Countries
+> Students  Projects
+> What is IBD?
+> ● Management consulting
+> elective course
+> ● International projects with real
+> world clients
+> ● Offered to MBAs at Berkeley
+> Haas for 34 years!
+
+**[S2]** `vault/raw/Teams@Haas Collaborative Plan .docx:29-31 (GOAL ALIGNMENT)` — score 4.433
+
+> ## GOAL ALIGNMENT
+> Part II:  Team Goals
+> HOW DO WE KNOW IF WE ARE SUCCESSFUL?  The following are a set of shared goals that align with our individual aims and that we can evaluate and metric over time to determine whether we are meeting our success criteria.
+
+**[S3]** `vault/raw/IBD Client Questionnaire.docx:28-31 ((5) Organization & Performance)` — score 4.398
+
+> ## (5) Organization & Performance
+> - Who is the lead sponsor for this work?
+> - What are the key stakeholder groups who will need to be involved and consulted along the way?
+> - Is this organization going through any major internal transitions at present (e.g., of leadership, organizational structure, culture)?
+
+**[S4]** `vault/raw/IBD Client Questionnaire.docx:10-14 ((2) Project Objectives and Outcomes)` — score 3.96
+
+> ## (2) Project Objectives and Outcomes
+> - What is the main objective that we should try to achieve together and that would get you a long way toward meeting the challenge?
+> - Potential categories:  improved revenue, profitability, capabilities, customer intimacy, future optionality, culture, sustainability, cost structure, etc.
+> - At the end of this project, what would success look like?
+> - What are the greatest concerns, risks or jeopardies to our joint success in your mind?
+
+**[S5]** `vault/raw/IBD Client Questionnaire.docx:32-36 ((6) Engagement Design: Project Timeline & Deliverables)` — score 3.852
+
+> ## (6) Engagement Design: Project Timeline & Deliverables
+> - How does the project / course timeline integrate into your own organizational review cycles?
+> - Are there any major calendar issues within the organization that could affect our project (e.g., end of fiscal year, annual meeting, personal vacations for team members or sponsors).
+> - What key deliverables will we need to support our project objectives?
+> - What communications style tends to work best in this organizational culture?

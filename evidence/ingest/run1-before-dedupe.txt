@@ -1,0 +1,86 @@
+ingest · local · gemma4:e2b-it-qat
++ vault/raw/IBD Client Questionnaire.docx (new)
+  7 section(s) of <= 6000 chars sent to Gemma
+  section 1: 1 concept(s) in 10.3s
+  section 2: 1 concept(s) in 7.1s
+  section 3: 3 concept(s) in 8.0s
+  section 4: 4 concept(s) in 10.5s
+  section 5: 1 concept(s) in 4.6s
+  section 6: 1 concept(s) in 3.3s
+  section 7: 1 concept(s) in 5.8s
+  wrote [[IBD Client Questionnaire Structure]] + 4 concept note(s) in 53.3s
++ vault/raw/IBD Info Session Spring 2026_Slides.pdf (new)
+  26 section(s) of <= 6000 chars sent to Gemma
+  section 1: 2 concept(s) in 4.1s
+  section 2: 3 concept(s) in 6.1s
+  section 3: 2 concept(s) in 3.6s
+  section 4: 3 concept(s) in 7.5s
+  section 5: 1 concept(s) in 4.6s
+  section 6: 1 concept(s) in 6.3s
+  section 7: 4 concept(s) in 12.8s
+  section 8: 2 concept(s) in 9.2s
+  section 9: 1 concept(s) in 7.3s
+  section 10: 4 concept(s) in 13.1s
+  section 11: 1 concept(s) in 3.5s
+  section 12: 1 concept(s) in 10.9s
+  section 13: 1 concept(s) in 6.4s
+  section 14: 4 concept(s) in 20.5s
+  section 15: 1 concept(s) in 5.7s
+  section 16: 3 concept(s) in 18.8s
+  section 17: 2 concept(s) in 14.3s
+  section 18: 3 concept(s) in 13.8s
+  section 19: 2 concept(s) in 13.4s
+  section 20: 3 concept(s) in 12.6s
+  section 21: 4 concept(s) in 10.5s
+  section 22: 2 concept(s) in 12.9s
+  section 23: 3 concept(s) in 13.4s
+  section 24: 1 concept(s) in 9.0s
+  section 25: 2 concept(s) in 6.4s
+  section 26: 1 concept(s) in 5.7s
+  wrote [[IBD Program Information]] + 4 concept note(s) in 264.7s
++ vault/raw/Teams@Haas Collaborative Plan .docx (new)
+  8 section(s) of <= 6000 chars sent to Gemma
+  section 1: 3 concept(s) in 17.8s
+  section 2: 4 concept(s) in 19.0s
+  section 3: 6 concept(s) in 22.0s
+  section 4: 4 concept(s) in 19.7s
+  section 5: 2 concept(s) in 9.3s
+  section 6: 1 concept(s) in 5.1s
+  section 7: 6 concept(s) in 17.4s
+  section 8: 1 concept(s) in 5.0s
+  wrote [[Teams@Haas Collaborative Plan]] + 4 concept note(s) in 124.4s
+linking related notes for 15 note(s)
+  related for Balanced Communication: 3 link(s)
+  related for Central Strategic Challenge: 3 link(s)
+  related for General Information Session: 3 link(s)
+  related for IBD Client Questionnaire: 3 link(s)
+  related for IBD Program: 3 link(s)
+  related for IBD: 3 link(s)
+  related for Individual Motivations: 3 link(s)
+  related for International Business Development Program: 3 link(s)
+  related for Project Objectives: 3 link(s)
+  related for Project Outcomes: 3 link(s)
+  related for Team Climate: 3 link(s)
+  related for Team Goals: 3 link(s)
+  related for IBD Program Information: 3 link(s)
+  related for IBD Client Questionnaire Structure: 3 link(s)
+  related for Teams@Haas Collaborative Plan: 2 link(s)
+index.md, Source Catalog and retrieval index updated (15 notes, 125 passages) in 564.0s
+      564.31 real         0.50 user         0.14 sys
+            47038464  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               11064  page reclaims
+                 864  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                 118  messages sent
+                  59  messages received
+                   0  signals received
+                 177  voluntary context switches
+                1156  involuntary context switches
+          3803596355  instructions retired
+          1399815678  cycles elapsed
+            34850176  peak memory footprint

@@ -1,0 +1,34 @@
+ingest · local · gemma4:e2b-it-qat
++ vault/raw/IBD Client Questionnaire.docx (update)
+  2778 chars -> 7 section(s) -> 1 Gemma call(s) of <= 6000 chars
+  part 1: 4 concept(s) in 27.4s
+  concepts kept: Central Strategic Challenge, Project Objectives and Outcomes, Market & Industry, Customer Insights
+  wrote [[IBD Client Questionnaire]] + 4 concept note(s) in 35.2s
++ vault/raw/IBD Info Session Spring 2026_Slides.pdf (update)
+  8095 chars -> 26 section(s) -> 2 Gemma call(s) of <= 6000 chars
+  part 1: 4 concept(s) in 36.8s
+  part 2: 4 concept(s) in 38.3s
+  concepts kept: IBD Mechanics, Team Member Expectations, IBD Project Travel, International Travel Requirements
+  note [[Travel Requirements]] no longer has any source; review or delete it
+  wrote [[IBD Program Info Session]] + 4 concept note(s) in 87.8s
++ vault/raw/Teams@Haas Collaborative Plan .docx (update)
+  5509 chars -> 8 section(s) -> 1 Gemma call(s) of <= 6000 chars
+  part 1: 4 concept(s) in 39.4s
+  concepts kept: Goal Alignment, Team Climate, Team Knowledge Coordination
+  wrote [[Teams@Haas Collaborative Plan]] + 3 concept note(s) in 49.3s
+linking related notes for 14 note(s)
+  related for Central Strategic Challenge: 3 link(s)
+  related for Customer Insights: 3 link(s)
+  related for Goal Alignment: 3 link(s)
+  related for IBD Mechanics: 3 link(s)
+  related for IBD Project Travel: 3 link(s)
+  related for International Travel Requirements: 3 link(s)
+  related for Market & Industry: 3 link(s)
+  related for Project Objectives and Outcomes: 3 link(s)
+  related for Team Climate: 2 link(s)
+  related for Team Knowledge Coordination: 3 link(s)
+  related for Team Member Expectations: 3 link(s)
+  related for IBD Program Info Session: 3 link(s)
+  related for IBD Client Questionnaire: 3 link(s)
+  related for Teams@Haas Collaborative Plan: 3 link(s)
+index.md, Source Catalog and retrieval index updated (15 notes, 94 passages) in 319.7s

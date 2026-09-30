@@ -1,0 +1,105 @@
+{
+  "mode": "ask",
+  "execution": "local",
+  "model": "gemma4:e2b-it-qat",
+  "time": "2026-09-29T21:49:33",
+  "question": "If I lead an IBD team, how many hours a week should I plan to spend on it?",
+  "retrieved": [
+    {
+      "label": "S1",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L65-77",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 7",
+      "lines": [
+        65,
+        77
+      ],
+      "score": 13.088,
+      "text": "## Page 7\nHow does the IBD Program work?\n● Oct 8: IBD application deadline\n◦ All applicants will be considered for a team member position\n◦ Those interested in being a team lead indicate this on the application\n● Week of Oct 13: Review of IBD applications and selected team lead\ncandidate interviews\n● Week of Oct 27: Notification of acceptance into the IBD program\n● Spring semester:\n◦  All enrolled students are assigned to a project team advised by a Faculty Mentor\n◦  Each team has 4 members (including a Team Lead) and 1 Faculty Mentor\n◦  Teams spend last 2 weeks of May in-country"
+    },
+    {
+      "label": "S2",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L78-95",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 8",
+      "lines": [
+        78,
+        95
+      ],
+      "score": 11.473,
+      "text": "## Page 8\nTeam Member & Team Lead Expectations\nTeam Member Expectations  Team Lead Expectations\n●  8-10 hours/week (including class time  ●  10-12 hours/week\nand client calls)  ●  Effective team schedule creation and\nprogress management\n●  Timely, high quality output\n●  Assurance of on-time completion of\n●  Engagement throughout the semester  project tasks and assignments\nand project  ●  Best practices coaching of team\nmembers\n●  Completion of all client-related tasks  ●  Effective communication with team,\n●  Cooperation with team lead and  faculty mentor, IBD staff, and clients\nmembers  ●  Coordination of team travel logistics with\nIBD staff and clients\n●  Support of team members in  ●  New this year! 1 additional unit\nimproving their work products"
+    },
+    {
+      "label": "S3",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L104-122",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 10",
+      "lines": [
+        104,
+        122
+      ],
+      "score": 4.679,
+      "text": "## Page 10\nAgriculture\nAgriculture  Healthcare  High Tech\nClients  Financial\nBiotechnology\ncome  Services\nfrom\nEcotourism\nConservation  Energy\nHospitality\nmany\nsectors  Financial Services\nEcotourism  Education\nEnergy\nHospitality\nEducation  Manufacturing\nManufacturing  Retail\nRetail"
+    },
+    {
+      "label": "S4",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L96-103",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 9",
+      "lines": [
+        96,
+        103
+      ],
+      "score": 4.192,
+      "text": "## Page 9\nIBD projects include diverse components\nCase  Entrepreneurial  Market  Sustainability\nStudies  Activities  Research  Plans\nStrategic  Feasibility  Financial\nBusiness Plans  Studies\nPlans  Assessments"
+    },
+    {
+      "label": "S5",
+      "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L205-216",
+      "path": "vault/raw/IBD Info Session Spring 2026_Slides.pdf",
+      "kind": "raw",
+      "section": "Page 19",
+      "lines": [
+        205,
+        216
+      ],
+      "score": 4.035,
+      "text": "## Page 19\nHow does the IBD Project Travel work?\nOverseas student travel for 2 weeks in May is a critical part of the IBD academic\nand project experience\n●  IBD works with Berkeley Study Abroad Office to obtain campus approval for\nall IBD overseas student travel\n●  Participants will be required to sign an IBD Code of Conduct as part of the\napplication process\n●  If IBD project travel is cancelled due to unforeseen circumstances, students\nwill continue to work remotely to wrap up the project during those 2 weeks\nin May"
+    }
+  ],
+  "used_passages": 5,
+  "min_score": 2.0,
+  "answer": "A Team Lead should plan to spend 10-12 hours per week, which includes class time and client calls [S2].",
+  "decided_by": "model",
+  "status": "cited",
+  "citation_check": {
+    "cited": [
+      {
+        "label": "S2",
+        "id": "vault/raw/IBD Info Session Spring 2026_Slides.pdf#L78-95",
+        "location": "vault/raw/IBD Info Session Spring 2026_Slides.pdf:78-95 (Page 8)"
+      }
+    ],
+    "invalid_labels": [],
+    "uncited_sentences": [],
+    "support": [
+      {
+        "sentence": "A Team Lead should plan to spend 10-12 hours per week, which includes class time and client calls .",
+        "label": "S2",
+        "overlap": 0.79
+      }
+    ],
+    "insufficient": false
+  },
+  "stats": {
+    "wall_seconds": 2.01,
+    "load_seconds": 0.0,
+    "prompt_tokens": 1168,
+    "output_tokens": 29,
+    "gen_tokens_per_sec": 43.8
+  }
+}
